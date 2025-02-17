@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,3 +65,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# SIMANTRA_BKPSDMBoyolali
+SIMANTRA (Sistem Manajemen Inventaris Terpadu) is a platform developed to manage inventory at the Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupatem Boyolali. It simplifies asset recording, monitoring, and management with features like asset registration, usage tracking, and inventory reporting.
+>>>>>>> 77c6dca908ed73adb413d95503f78468e7db1d98
