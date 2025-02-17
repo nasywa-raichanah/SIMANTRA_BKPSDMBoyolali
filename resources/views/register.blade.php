@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
 <body>
-    <div class="login-container">
+    <div class="register-container">
         <div class="right-section">
             <div class="header">
                 <div class="logo">
@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <button class="btn-signup">SIGN UP</button>
+            <button class="btn-signin">SIGN IN</button>
         </div>
         <div class="left-section">
             <div class="contact-info">
@@ -62,7 +62,7 @@
                     <label for="profile_picture">Upload Foto Profil</label>
                         <input type="file" name="profile_picture" accept="image/*" placeholder="Foto Profil" required>
                     </div>
-                    <button type="submit" class="btn-signin">REGISTER</button>
+                    <button type="submit" class="btn-signup">REGISTER</button>
                 </form>
             </div>
         </div>

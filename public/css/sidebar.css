@@ -1,0 +1,100 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #0f172a; /* Warna navy gelap */
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1e293b; /* Warna hover */
+}
+
+/* Icon di sebelah kiri teks */
+.sidebar ul li a span {
+    margin-right: 10px;
+}
+
+/* Tombol Toggle Sidebar */
+.sidebar-toggle {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: #0f172a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.sidebar-toggle:hover {
+    background: #1e293b;
+}
+
+/* Mode kecil untuk sidebar */
+.sidebar.small {
+    width: 80px;
+}
+
+.sidebar.small h2,
+.sidebar.small ul li a span {
+    display: none;
+}
+
+.sidebar.small ul li a {
+    justify-content: center;
+}
+
+/* Untuk konten agar tidak ketutupan sidebar */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar.small + .content {
+    margin-left: 80px;
+}
