@@ -1,21 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Dashboard</h1>
-    <p>Hai, Nasywa Raichanah!</p>
 
-    <div class="dashboard-cards">
-        <div class="card">
-            <h2>1.000</h2>
-            <p>Semua Aset</p>
-        </div>
-        <div class="card">
-            <h2>980</h2>
-            <p>Aset Baik</p>
-        </div>
-        <div class="card">
-            <h2>20</h2>
-            <p>Dalam Pemeliharaan</p>
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+
+    <div class="dashboard-container">
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Cards -->
+            <div class="cards-container">
+                <div class="card">
+                    <h3>1.000</h3>
+                    <p>Semua Aset</p>
+                    <div class="card-info">
+                        <span>Aset Semua Aset</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>980</h3>
+                    <p>Aset Baik</p>
+                    <div class="card-info">
+                        <span>Aset Kondisi Baik</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>20</h3>
+                    <p>Pemeliharaan</p>
+                    <div class="card-info">
+                        <span>Aset Rusak</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
 @endsection

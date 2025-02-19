@@ -17,6 +17,7 @@
     left: 0;
     top: 0;
     transition: width 0.3s;
+    z-index: 1000;
 }
 
 .sidebar h2 {
@@ -91,6 +92,7 @@
 /* Untuk konten agar tidak ketutupan sidebar */
 .content {
     margin-left: 250px;
+    margin-top: 60px;
     padding: 20px;
     transition: margin-left 0.3s;
 }
