@@ -48,7 +48,7 @@
                         <input type="password" name="password" placeholder="Password" required>
                         <i class="fas fa-lock"></i>
                     </div>
-                    <button type="submit" class="btn-signin">SIGN IN</button>
+                    <button type="submit" class="btn-signin">LOGIN</button>
                 </form>
             </div>
         </div>

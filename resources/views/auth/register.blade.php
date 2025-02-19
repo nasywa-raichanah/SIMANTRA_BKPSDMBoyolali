@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <button class="btn-signin">SIGN IN</button>
+            <a href="{{ route('login') }}" class="btn-signin">SIGN IN</a>
         </div>
         <div class="left-section">
             <div class="contact-info">
