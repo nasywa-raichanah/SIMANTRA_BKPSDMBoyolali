@@ -10,9 +10,6 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/', [AuthController::class, 'login'])->name('login');
 
-Route::get('/profile', function () {
-    return view('profil');
-});
 
 // Gunakan middleware auth untuk halaman yang membutuhkan login
 Route::middleware(['auth'])->group(function () {
@@ -24,6 +21,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/aset', function () {
         return view('aset.index');
     })->name('aset');
+    
 });
+
+Route::get('/profil', [AuthController::class, 'profil'])->name('profil')->middleware('auth');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

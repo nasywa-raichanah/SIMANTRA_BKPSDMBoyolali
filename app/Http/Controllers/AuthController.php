@@ -10,6 +10,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    // register
     public function showRegisterForm()
     {
         return view('auth.register');
@@ -30,7 +31,8 @@ class AuthController extends Controller
         }
 
         if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('photos', 'public');    
+            $photoPath = $request->file('photo')->store('public/photos');
+            $photoPath = str_replace('public/', 'storage/', $photoPath);    
         } else {
             $photoPath = null;
         }
@@ -71,4 +73,11 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/')->with('success', 'Anda telah logout.');
     }
+
+    public function profil()
+    {
+        return view('profil', ['user' => auth()->user()]);
+    }
 }
+
+

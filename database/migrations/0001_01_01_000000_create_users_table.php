@@ -12,10 +12,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable(); // Tambahkan ini
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('nip')->unique();
             $table->string('password');
-            $table->string('profile_picture')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
