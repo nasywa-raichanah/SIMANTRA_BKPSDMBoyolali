@@ -7,6 +7,7 @@
     <title>SIMANTRA</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -30,6 +31,7 @@
         });
     </script>
 
+    @stack('scripts')
 </body>
 
 </html>

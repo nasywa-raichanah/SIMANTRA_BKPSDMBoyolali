@@ -4,7 +4,7 @@
         <button class="menu-toggle">☰</button>
     </div>
     <ul class="menu">
-        <li><a href="{{ route('dashboard') }}"><i class="icon">🏠</i> <span class="menu-text">Dashboard</span></a></li>
+        <li><a href="{{ route('dashboard') }}"><i class="icon">🏠︎</i> <span class="menu-text">Dashboard</span></a></li>
         <li><a href="{{ route('aset') }}"><i class="icon">📦</i> <span class="menu-text">Aset</span></a></li>
         <li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -17,3 +17,27 @@
 
     </ul>
 </div>
+
+@push('scripts')
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.querySelector(".sidebar");
+            const toggleButton = document.querySelector(".menu-toggle");
+            const sidebarTitle = document.querySelector(".sidebar h2"); // Ambil elemen SIMANTRA
+            const menuTexts = document.querySelectorAll(".menu-text");
+
+            toggleButton.addEventListener("click", function () {
+                sidebar.classList.toggle("small");
+
+                // Sembunyikan teks saat sidebar mengecil
+                if (sidebar.classList.contains("small")) {
+                    sidebarTitle.style.display = "none"; // Hilangkan teks SIMANTRA
+                    menuTexts.forEach(text => text.style.display = "none");
+                } else {
+                    sidebarTitle.style.display = "block"; // Tampilkan kembali teks SIMANTRA
+                    menuTexts.forEach(text => text.style.display = "inline");
+                }
+            });
+        });
+    </script>
+@endpush

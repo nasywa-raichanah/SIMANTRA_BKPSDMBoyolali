@@ -14,7 +14,7 @@ body {
     height: 100%;
 }
 
-.right-section {
+.left-section {
     background-color: #02152E;
     color: white;
     flex: 35%;
@@ -42,11 +42,12 @@ body {
 }
   
 .nama-instansi {
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    color: #ffffff;
     line-height: 1.25;
     text-align: left;
     margin-left: 20px;
+    color: #ffffff;
 }
 
 .nama-instansi h1 {
@@ -57,20 +58,32 @@ body {
     font-size: 15px;
 }
   
+.icon {
+    margin-left: 20px;
+}
+
 .btn-signin {
     border: 2px solid white;
-    border-radius: 30px;
+    border-radius: 10px;
     padding: 12px 35px;
     font-size: 18px;
     color: white;
     background-color: transparent;
     transition: 0.3s;
+    position: absolute;
+    top: 380px;
 }
 .btn-signin:hover {
     background-color: #0c2c55;
 }
 
-.left-section {
+.login {
+    font-size: 16px;
+    position: absolute;
+    top: 350px;
+}
+
+.right-section {
     background-color: #c3d7e9;
     flex: 65%;
     display: flex;
@@ -91,7 +104,16 @@ body {
 .input-group {
     position: relative;
     margin-bottom: 20px;
+    width: 420px;
 }
+.input-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+}
+
 .input-group input {
     width: 100%;
     padding: 14px;
@@ -100,19 +122,12 @@ body {
     border-radius: 5px;
     background-color: #e5e7eb;
 }
-.input-group i {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #333;
-}
 .btn-signup {
-    width: 200px;
+    width: 450px;
     padding: 14px;
     font-size: 17px;
     font-weight: bold;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     background-color: #02152E;
     color: white;
@@ -140,4 +155,9 @@ body {
     color: #000;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.foto-profil {
+    font-size: 14px;
+    margin-bottom: 5px;
 }

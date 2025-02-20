@@ -18,18 +18,6 @@
                 </div>
             </div>
 
-            <div class="register">Belum punya akun?</div>
-            <a href="{{ route('register') }}" class="btn-signup">SIGN UP</a>
-
-
-        </div>
-        <div class="right-section">
-            <div class="contact-info">
-                <p>
-                    <i class="fas fa-envelope"></i> bkpsdm@boyolali.go.id 
-                    <i class="fas fa-phone"></i> (0276) 321005
-                </p>
-            </div>
             <div class="login-form">
                 <div class="judul-website">SIMANTRA</div>
                 <div class="judul-website-2">Sistem Manajemen Inventaris Terpadu</div>
@@ -51,6 +39,22 @@
                     <button type="submit" class="btn-signin">LOGIN</button>
                 </form>
             </div>
+
+
+        </div>
+        <div class="right-section">
+            <div class="contact-info">
+                <p>
+                    <i class="icon"></i>✉︎
+                    <i class="fas fa-envelope"></i>  bkpsdm@boyolali.go.id    
+                    <i class="icon"></i>☎
+                    <i class="fas fa-phone"></i> (0276) 321005
+                </p>
+            </div>
+
+            <div class="register">Belum punya akun?</div>
+            <a href="{{ route('register') }}" class="btn-signup">SIGN UP</a>
+            
         </div>
     </div>
 </body>

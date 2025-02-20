@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="register-container">
-        <div class="right-section">
+        <div class="left-section">
             <div class="header">
                 <div class="logo">
                 <img src="{{ asset('image/logo_boyolali.png') }}" alt="Logo">
@@ -19,12 +19,15 @@
                 </div>
             </div>
 
+            <div class="login">Kembali ke Halaman Login</div>
             <a href="{{ route('login') }}" class="btn-signin">SIGN IN</a>
         </div>
-        <div class="left-section">
+        <div class="right-section">
             <div class="contact-info">
                 <p>
-                    <i class="fas fa-envelope"></i> bkpsdm@boyolali.go.id 
+                    <i class="icon"></i>✉︎
+                    <i class="fas fa-envelope"></i>  bkpsdm@boyolali.go.id    
+                    <i class="icon"></i>☎
                     <i class="fas fa-phone"></i> (0276) 321005
                 </p>
             </div>
@@ -39,7 +42,7 @@
                 <form action="{{ url('register') }}" method="POST">
                     @csrf
                     <div class="input-group">
-                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="text" name="name" placeholder="Nama Lengkap" required>
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="input-group">
@@ -58,8 +61,8 @@
                         <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
                         <i class="fas fa-lock"></i>
                     </div>
+                    <div class="foto-profil" for="profile_picture">Upload Foto Profil</div>
                     <div class="input-group">
-                    <label for="profile_picture">Upload Foto Profil</label>
                         <input type="file" name="profile_picture" accept="image/*" placeholder="Foto Profil" required>
                     </div>
                     <button type="submit" class="btn-signup">REGISTER</button>
