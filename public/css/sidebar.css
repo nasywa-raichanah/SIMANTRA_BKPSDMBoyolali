@@ -47,6 +47,7 @@
     padding: 10px;
 }
 
+/* Styling item menu agar sejajar */
 .menu li {
     padding: 15px;
 }
@@ -56,12 +57,18 @@
     color: white;
     display: flex;
     align-items: center;
+    gap: 12px; /* Pastikan jarak ikon dan teks tetap sama */
 }
 
+/* Perbaikan ikon agar sejajar */
 .icon {
     font-size: 24px;
-    margin-right: 10px;
-    font-style: normal;
+    width: 24px;  /* Pastikan lebar ikon tetap */
+    height: 24px; /* Pastikan tinggi ikon tetap */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Pastikan ikon tidak menyusut */
 }
 
 .sidebar.minimized .menu-text {
