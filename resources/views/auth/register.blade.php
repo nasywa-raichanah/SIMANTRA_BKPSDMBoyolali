@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIMANTRA - Register</title>
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
     <div class="register-container">
         <div class="left-section">
             <div class="header">
                 <div class="logo">
-                <img src="{{ asset('image/logo_boyolali.png') }}" alt="Logo">
+                    <img src="{{ asset('image/logo_boyolali.png') }}" alt="Logo">
                 </div>
                 <div class="nama-instansi">
                     <h1>Badan Kepegawaian dan Pengembangan<br>Sumber Daya Manusia</h1>
@@ -25,8 +28,8 @@
         <div class="right-section">
             <div class="contact-info">
                 <p>
-                    <i class="icon"></i>✉︎
-                    <i class="fas fa-envelope"></i>  bkpsdm@boyolali.go.id    
+                    <i class="icon"></i>✉
+                    <i class="fas fa-envelope"></i> bkpsdm@boyolali.go.id
                     <i class="icon"></i>☎
                     <i class="fas fa-phone"></i> (0276) 321005
                 </p>
@@ -34,11 +37,6 @@
             <div class="register-form">
                 <div class="judul-website">SIMANTRA</div>
                 <div class="judul-website-2">Sistem Manajemen Inventaris Terpadu</div>
-                @if ($errors->any())
-                    <div class="error-message">
-                        <strong>{{ $errors->first('register') }}</strong>
-                    </div>
-                @endif
                 <form action="{{ url('register') }}" method="POST">
                     @csrf
                     <div class="input-group">
@@ -70,5 +68,30 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if ($errors->any())
+            Swal.fire({
+                icon: 'error',
+                title: 'Registrasi Gagal!',
+                text: 'Pastikan semua data diisi dengan benar dan password sesuai.',
+                html: '<ul>@foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>',
+                confirmButtonText: 'OK'
+            });
+        @endif
+    </script>
+
+    <script>
+        @if(session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: '{{ session("success") }}',
+            });
+        @endif
+    </script>
+
 </body>
+
 </html>

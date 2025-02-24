@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AssetController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 
 // Middleware untuk tamu (guest)
 Route::middleware(['guest'])->group(function () {
@@ -15,9 +16,7 @@ Route::middleware(['guest'])->group(function () {
 
 // Middleware untuk pengguna yang sudah login (auth)
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Perbaikan resource route untuk aset
     Route::resource('aset', AssetController::class)->names([

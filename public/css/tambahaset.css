@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #B0C4DE;
+}
+
+/* Layout */
+.aset-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #102542;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.menu li i {
+    font-size: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    background-color: #3b5a78; 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-text {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.profile-icon {
+    width: 24px;
+    height: 24px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.label {
+    display: block;
+    color: #4a5568;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.input-field, .input-field-v{
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    font-size: 12px;
+}
+
+.input-field-v{
+    /* Menambahkan panah dropdown custom */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'><path d='M5.516 7.548a.75.75 0 0 1 1.06-.032L10 10.293l3.424-2.777a.75.75 0 1 1 .992 1.124l-4 3.25a.75.75 0 0 1-.992 0l-4-3.25a.75.75 0 0 1-.032-1.06z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    appearance: none; /* Hilangkan panah bawaan */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-cancel {
+    background-color: #e3342f;
+    color: white;
+    font-size: 14px;
+}
+
+.btn-submit {
+    background-color: #38a169;
+    color: white;
+    font-size: 14px;
+}

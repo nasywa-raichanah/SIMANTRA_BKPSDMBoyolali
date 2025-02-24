@@ -1,0 +1,341 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #B0C4DE;
+}
+
+/* Layout */
+.aset-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #102542;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.menu li i {
+    font-size: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    background-color: #3b5a78; 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-text {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.profile-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.card p {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+.inventory-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.inventory-table th, 
+.inventory-table td {
+    width: 20%;
+    text-align: left;
+    border: none; /* Hapus semua border default */
+    border-bottom: 1px solid #ddd; /* Tambahkan border hanya di bagian bawah */
+}
+
+/* Styling untuk header tabel */
+.inventory-table th {
+    background-color: #102542;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 2px solid #ddd; /* Tambahkan garis bawah lebih tebal pada header */
+}
+
+.inventory-table select {
+    background-color: #102542;
+    color: #fff;
+    width: 100%;
+    padding: 6px;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+/* Tambahkan border radius pada sudut atas kiri dan kanan */
+.inventory-table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.inventory-table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    /* background-color: #ceabab; */
+    border-radius: 5px;
+    overflow: hidden;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    }
+    th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    }
+    th {
+    /* background-color: #250f13;
+    color: white; */
+    text-align: center;
+    font-size: 14px;
+    }
+    td {
+    font-size: 12px;
+    }
+
+.btn-action {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+    
+.btn-edit {
+    background-color: yellow;
+    color: black;
+}
+   
+.btn-delete {
+    background-color: red;
+    color: white;
+}
+    
+.table-actions {
+    margin-top: 10px;
+    text-align: left;
+}
+    
+.btn-add {
+    display: flex; /* Membuat ikon dan teks dalam satu baris */
+    align-items: center; /* Sejajarkan ikon dan teks di tengah vertikal */
+    justify-content: center; /* Memastikan konten berada di tengah */
+    background-color: #0a1f33; /* Warna sesuai tema */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    gap: 8px; /* Jarak antara ikon dan teks */
+    width: fit-content; /* Sesuaikan ukuran button */
+}
+
+.btn-add img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Header section sejajar */
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+/* Kontainer untuk pencarian dan filter */
+.search-sort-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Beri jarak antar elemen */
+}
+
+/* Input pencarian dan ikon */
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    width: 250px;
+}
+
+.search-box input {
+    border: none;
+    padding: 5px;
+    flex: 1;
+    outline: none;
+    font-size: 12px;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.search-box button img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+.search-box button:hover img {
+    opacity: 1;
+}
+
+/* Dropdown filter */
+.sort-form select {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+
+.icon {
+    width: 16px; 
+    height: 16px;
+    vertical-align: middle; 
+    margin-right: 8px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 3px;
+}
+
+.pagination li a, 
+.pagination li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.pagination li a:hover {
+    background-color: #0056b3;
+}
+
+/* Tombol Prev dan Next dengan Ikon */
+.pagination li:first-child a,
+.pagination li:last-child a {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+}
+
+/* Styling untuk halaman aktif */
+.pagination .active span {
+    background-color: #0056b3;
+    font-weight: bold;
+}
+
+/* Styling untuk filter dropdown agar terlihat serasi dengan header tabel */
+.filter-header {
+    position: relative;
+}
+
+.filter-dropdown {
+    width: 100%;
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px;
+    text-align: left;
+    -webkit-appearance: none; /* Untuk menghilangkan tampilan default browser */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Menambahkan ikon dropdown secara manual */
+.filter-dropdown::after {
+    /* content: " ▼"; */
+    font-size: 12px;
+}
+
+/* Styling agar dropdown terlihat saat diklik */
+.filter-dropdown:focus {
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
