@@ -23,6 +23,7 @@ class AuthController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'nip' => 'required|string|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'password_confirmation' => 'required|string|min:8|same:password',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -32,11 +33,11 @@ class AuthController extends Controller
 
         if ($request->hasFile('photo')) {
             $photoPath = $request->file('photo')->store('public/photos');
-            $photoPath = str_replace('public/', 'storage/', $photoPath);    
+            $photoPath = str_replace('public/', 'storage/', $photoPath);
         } else {
             $photoPath = null;
         }
-        
+
 
         $user = User::create([
             'name' => $request->name,
@@ -79,5 +80,3 @@ class AuthController extends Controller
         return view('profil', ['user' => auth()->user()]);
     }
 }
-
-

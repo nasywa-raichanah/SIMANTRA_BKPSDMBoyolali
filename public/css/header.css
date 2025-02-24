@@ -27,7 +27,7 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    max-width: 100%;
+    border: 2px solid #ddd;
 }
 
 .content {
