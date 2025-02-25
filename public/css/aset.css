@@ -9,6 +9,7 @@ body {
 .aset-container {
     display: flex;
     height: 100vh;
+    padding-top: 60px; 
 }
 
 /* Sidebar */
@@ -93,7 +94,8 @@ body {
 .inventory-table th, 
 .inventory-table td {
     width: 20%;
-    text-align: left;
+    text-align: center;
+    vertical-align: middle;
     border: none; /* Hapus semua border default */
     border-bottom: 1px solid #ddd; /* Tambahkan border hanya di bagian bawah */
     text-transform: capitalize;
