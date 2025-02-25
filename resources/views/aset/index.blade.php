@@ -48,14 +48,14 @@
                                         </select>
                                     </form>
                                 </th>
-                                <th>Aksi</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($assets as $asset)
                                 <tr>
                                     <td>{{ $asset->nama_barang }}</td>
-                                    <td>{{ $asset->kode_barang }}</td>
+                                    <td class="no-transform">{{ $asset->kode_barang }}</td>
                                     <td>{{ $asset->kategori }}</td>
                                     <td>{{ $asset->lokasi_barang }}</td>
                                     <td>{{ $asset->kondisi }}</td>

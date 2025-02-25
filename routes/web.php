@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AssetController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AssetReportController;
 
 // Middleware untuk tamu (guest)
 Route::middleware(['guest'])->group(function () {
@@ -33,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/profile/update-photo', [ProfileController::class, 'updatePhoto'])->name('profile.updatePhoto');
 
     Route::post('/profile/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+    Route::get('/laporan/download', [AssetReportController::class, 'downloadPDF'])->name('laporan.download');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

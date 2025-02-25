@@ -6,7 +6,7 @@
     <ul class="menu">
         <li><a href="{{ route('dashboard') }}"><img src="{{ asset('image/dashboard.png') }}" class="icon"> <span class="menu-text">Dashboard</span></a></li>
         <li><a href="{{ route('aset.index') }}"><img src="{{ asset('image/aset.png') }}" class="icon"> <span class="menu-text">Aset</span></a></li>
-        <li><img src="{{ asset('image/file.png') }}" class="icon"> <span class="menu-text">Laporan</span></li>
+        <li><a href="{{ route('laporan.download') }}"><img src="{{ asset('image/file.png') }}" class="icon"> <span class="menu-text">Laporan</span></a></li>
         <li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
