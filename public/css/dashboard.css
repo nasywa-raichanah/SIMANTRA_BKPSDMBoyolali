@@ -82,7 +82,6 @@ body {
 .cards-container {
     display: flex;
     gap: 20px;
-    margin-top: 20px;
     flex-wrap: wrap; /* Agar tetap responsif di layar kecil */
     justify-content: space-between;
 }

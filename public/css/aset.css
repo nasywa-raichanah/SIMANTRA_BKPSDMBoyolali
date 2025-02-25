@@ -9,7 +9,6 @@ body {
 .aset-container {
     display: flex;
     height: 100vh;
-    padding-top: 60px; 
 }
 
 /* Sidebar */

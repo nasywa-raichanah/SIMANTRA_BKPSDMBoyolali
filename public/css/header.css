@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #ddd;
-    /* z-index: 999; Pastikan header berada di bawah sidebar */
+    z-index: 999; 
     overflow: hidden;
 }
 
