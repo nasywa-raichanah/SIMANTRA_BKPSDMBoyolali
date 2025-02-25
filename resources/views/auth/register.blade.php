@@ -59,10 +59,6 @@
                         <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
                         <i class="fas fa-lock"></i>
                     </div>
-                    <div class="foto-profil" for="profile_picture">Upload Foto Profil</div>
-                    <div class="input-group">
-                        <input type="file" name="profile_picture" accept="image/*" placeholder="Foto Profil" required>
-                    </div>
                     <button type="submit" class="btn-signup">REGISTER</button>
                 </form>
             </div>
