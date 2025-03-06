@@ -3,24 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Asset;
+use App\Models\IntraKompatabel;
+use App\Models\EkstraKompatabel;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class AssetReportController extends Controller
 {
     public function downloadPDF()
     {
-        $assets = Asset::all();
+        $intra = IntraKompatabel::all();
+        $ekstra = EkstraKompatabel::all();
 
         // Debugging: Cek apakah data ada
-        if ($assets->isEmpty()) {
-            return "Tidak ada data aset yang tersedia.";
+        if ($intra->isEmpty() && $ekstra->isEmpty()) {
+            return response()->json(['message' => 'Tidak ada data aset yang tersedia.'], 404);
         }
 
-        $pdf = Pdf::loadView('reports.assets', compact('assets'));
+        // Generate PDF dari Blade view
+        $pdf = Pdf::loadView('reports.assets', compact('intra', 'ekstra'))->setPaper('a4', 'landscape');
 
         return $pdf->download('laporan_aset.pdf');
     }
-
 }
-

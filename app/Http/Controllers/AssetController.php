@@ -3,84 +3,153 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Asset;
+use App\Models\IntraKompatabel;
+use App\Models\EkstraKompatabel;
 
 class AssetController extends Controller
 {
-    public function index(Request $request)
+    // Halaman utama
+    public function index()
     {
-        $query = Asset::query();
-
-        // Filter pencarian
-        if ($request->has('search') && $request->search != '') {
-            $query->where('nama_barang', 'like', '%' . $request->search . '%')
-                  ->orWhere('kode_barang', 'like', '%' . $request->search . '%');
-        }
-
-        // Sorting data
-        if ($request->has('sort') && $request->sort == 'oldest') {
-            $query->orderBy('created_at', 'asc');
-        } else {
-            $query->orderBy('created_at', 'desc'); // Default terbaru
-        }
-        
-        // Cek apakah ada filter kondisi yang dipilih
-        if ($request->has('kondisi') && $request->kondisi != '') {
-            $query->where('kondisi', $request->kondisi);
-        }
-        // Pagination (10 data per halaman)
-        $assets = $query->paginate(10);
-
-        return view('aset.index', compact('assets'));
+        return view('aset.index');
     }
 
-    public function create()
+    // ======================== INTRA KOMPATABEL ========================
+
+    public function intra(Request $request)
     {
-        return view('aset.create');
+        $intra = IntraKompatabel::query();
+
+        if ($request->filled('search')) {
+            $intra->where('nama_barang', 'like', '%' . $request->search . '%');
+        }
+
+        $intra = $intra->orderBy('kode_barang')->orderBy('nomor_register')->paginate(10);
+
+        return view('aset.intra', compact('intra'));
     }
 
-    public function store(Request $request)
+    public function createIntra()
+    {
+        return view('aset.create_intra');
+    }
+
+    public function storeIntra(Request $request)
     {
         $request->validate([
-            'nama_barang' => 'required|string|max:255',
-            'kode_barang' => 'required|string|unique:assets,kode_barang',
-            'kategori' => 'required|string',
-            'lokasi_barang' => 'required|string',
-            'kondisi' => 'required|in:Baik,Rusak,Hilang',
+            'kode_barang' => 'required|string|max:50',
+            'nama_barang' => 'required|string|max:255|unique:intra_kompatabel,nama_barang',
+            'nomor_register' => 'required|string|max:100',
+            'merk_type' => 'required|string|max:100',
+            'bahan' => 'required|string|max:100',
+            'tahun_pembelian' => 'required|integer',
+            'harga' => 'required|numeric',
+            'keterangan' => 'nullable|string',
+        ]);   
+
+        IntraKompatabel::create([
+            'kode_barang' => $request->kode_barang,
+            'nama_barang' => $request->nama_barang,
+            'nomor_register' => $request->nomor_register,
+            'merk_type' => $request->merk_type,
+            'bahan' => $request->bahan,
+            'tahun_pembelian' => $request->tahun_pembelian,
+            'harga' => $request->harga,
+            'keterangan' => $request->keterangan,
         ]);
 
-        Asset::create($request->all());
-
-        return redirect()->route('aset.index')->with('success', 'Aset berhasil ditambahkan.');
+        return redirect()->route('aset.intra')->with('success', 'Aset Intra berhasil ditambahkan.');
     }
 
-    public function edit($id)
+    public function editIntra($id)
     {
-        $asset = Asset::findOrFail($id);
-        return view('aset.edit', compact('asset'));
+        $asset = IntraKompatabel::findOrFail($id);
+        return view('aset.edit_intra', compact('asset'));
     }
 
-    public function update(Request $request, $id)
+    public function updateIntra(Request $request, $id)
     {
-        $request->validate([
-            'nama_barang' => 'required|string|max:255',
-            'kode_barang' => 'required|string|unique:assets,kode_barang,' . $id,
-            'kategori' => 'required|string',
-            'lokasi_barang' => 'required|string',
-            'kondisi' => 'required|in:Baik,Rusak,Hilang',
-        ]);
-
-        $asset = Asset::findOrFail($id);
+        $asset = IntraKompatabel::findOrFail($id);
         $asset->update($request->all());
 
-        return redirect()->route('aset.index')->with('success', 'Aset berhasil diperbarui.');
+        return redirect()->route('aset.intra')->with('success', 'Aset Intra berhasil diperbarui.');
     }
 
-    public function destroy($id)
+    public function destroyIntra($id)
     {
-        $asset = Asset::findOrFail($id);
+        $asset = IntraKompatabel::findOrFail($id);
         $asset->delete();
 
-        return redirect()->route('aset.index')->with('success', 'Aset berhasil dihapus.');
+        return redirect()->route('aset.intra')->with('success', 'Aset Intra berhasil dihapus.');
+    }
+
+    // ======================== EKSTRA KOMPATABEL ========================
+
+    public function ekstra(Request $request)
+    {
+        $ekstra = EkstraKompatabel::query();
+
+        if ($request->filled('search')) {
+            $ekstra->where('nama_barang', 'like', '%' . $request->search . '%');
+        }
+
+        $ekstra = $ekstra->orderBy('kode_barang')->orderBy('nomor_register')->paginate(10);
+
+        return view('aset.ekstra', compact('ekstra'));
+    }
+
+    public function createEkstra()
+    {
+        return view('aset.create_ekstra');
+    }
+
+    public function storeEkstra(Request $request)
+    {
+        $request->validate([
+            'kode_barang' => 'required|string|max:50',
+            'nama_barang' => 'required|string|max:255|unique:ekstra_kompatabel,nama_barang',
+            'nomor_register' => 'required|string|max:100',
+            'merk_type' => 'required|string|max:100',
+            'bahan' => 'required|string|max:100',
+            'tahun_pembelian' => 'required|integer',
+            'harga' => 'required|numeric',
+            'keterangan' => 'nullable|string',
+        ]);
+               
+
+        EkstraKompatabel::create([
+            'kode_barang' => $request->kode_barang,
+            'nama_barang' => $request->nama_barang,
+            'nomor_register' => $request->nomor_register,
+            'merk_type' => $request->merk_type,
+            'bahan' => $request->bahan,
+            'tahun_pembelian' => $request->tahun_pembelian,
+            'harga' => $request->harga,
+            'keterangan' => $request->keterangan,
+        ]);
+
+        return redirect()->route('aset.ekstra')->with('success', 'Aset Ekstra berhasil ditambahkan.');
+    }
+
+    public function editEkstra($id)
+    {
+        $asset = EkstraKompatabel::findOrFail($id);
+        return view('aset.edit_ekstra', compact('asset'));
+    }
+
+    public function updateEkstra(Request $request, $id)
+    {
+        $asset = EkstraKompatabel::findOrFail($id);
+        $asset->update($request->all());
+
+        return redirect()->route('aset.ekstra')->with('success', 'Aset Ekstra berhasil diperbarui.');
+    }
+
+    public function destroyEkstra($id)
+    {
+        $asset = EkstraKompatabel::findOrFail($id);
+        $asset->delete();
+
+        return redirect()->route('aset.ekstra')->with('success', 'Aset Ekstra berhasil dihapus.');
     }
 }

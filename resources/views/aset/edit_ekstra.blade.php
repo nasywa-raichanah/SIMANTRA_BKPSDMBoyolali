@@ -6,7 +6,7 @@
 
     <p>Edit Barang</p>
 
-    <form action="{{ route('aset.update', $asset->id) }}" method="POST">
+    <form action="{{ route('aset.ekstra.update', $asset->id) }}" method="POST">
         @csrf
         @method('PUT') {{-- Gunakan method PUT untuk update data --}}
 
@@ -22,7 +22,7 @@
 
         <div class="mb-4">
             <label class="label">Nomor Registrasi</label>
-            <input type="text" name="nomor_registrasi" class="input-field" placeholder="Masukkan nomor registrasi" value="{{ old('nomor_registrasi', $asset->nomor_registrasi) }}">
+            <input type="text" name="nomor_register" class="input-field" placeholder="Masukkan nomor register" value="{{ old('nomor_register', $asset->nomor_register) }}">
         </div>
 
         <div class="mb-4">
@@ -41,7 +41,7 @@
                 <option value="Kaca" {{ $asset->bahan == 'Kaca' ? 'selected' : '' }}>Kaca</option>
                 <option value="Plastik" {{ $asset->bahan == 'Plastik' ? 'selected' : '' }}>Plastik</option>
                 <option value="Campuran" {{ $asset->bahan == 'Campuran' ? 'selected' : '' }}>Campuran</option>
-
+                <option value="-" {{ $asset->bahan == '-' ? 'selected' : '' }}>-</option>
             </select>
         </div>
 
@@ -55,8 +55,13 @@
             <input type="text" name="harga" class="input-field" placeholder="Masukkan harga" value="{{ old('harga', $asset->harga) }}">
         </div>
 
+        <div class="mb-4">
+            <label class="label">Keterangan</label>
+            <input type="text" name="keterangan" class="input-field" placeholder="Masukkan keterangan" value="{{ old('harga', $asset->keterangan) }}">
+        </div>
+
         <div class="button-group">
-            <a href="{{ route('aset.index') }}" class="btn btn-cancel">Batal</a>
+            <a href="{{ route('aset.ekstra') }}" class="btn btn-cancel">Batal</a>
             <button type="submit" class="btn btn-submit">Perbarui</button>
         </div>
     </form>
