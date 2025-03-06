@@ -6,7 +6,7 @@
 
     <p>Tambah Barang</p>
 
-    <form action="{{ route('aset.store') }}" method="POST">
+    <form action="{{ route('aset.intra.store') }}" method="POST">
         @csrf
         
         <div class="mb-4">
@@ -40,26 +40,27 @@
                 <option value="Kaca">Kaca</option>
                 <option value="Plastik">Plastik</option>
                 <option value="Campuran">Campuran</option>
+                <option value="-">-</option>
             </select>
         </div>
         
         <div class="mb-4">
             <label class="label">Tahun Pembelian</label>
-            <input type="text" name="tahun_pembelian" class="input-field" placeholder="Masukkan lokasi barang">
+            <input type="text" name="tahun_pembelian" class="input-field" placeholder="Masukkan tahun pembelian">
         </div>
         
         <div class="mb-4">
             <label class="label">Harga</label>
-            <input type="text" name="harga" class="input-field" placeholder="Masukkan kode barang">
+            <input type="text" name="harga" class="input-field" placeholder="Masukkan harga">
         </div>
 
         <div class="mb-4">
             <label class="label">Keterangan</label>
-            <input type="text" name="keterangan" class="input-field" placeholder="Masukkan kode barang">
+            <input type="text" name="keterangan" class="input-field" placeholder="Masukkan keterangan">
         </div>
         
         <div class="button-group">
-            <a href="{{ route('aset.index') }}" class="btn btn-cancel">Cancel</a>
+            <a href="{{ route('aset.intra') }}" class="btn btn-cancel">Cancel</a>
             <button type="submit" class="btn btn-submit">Simpan</button>
         </div>
     </form>

@@ -85,6 +85,41 @@ body {
     font-weight: bold;
     text-align: left;
 }
+
+.judul {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center; /* Agar konten di tengah */
+    width: 100%;
+}
+
+.button-index {
+    display: flex;
+    flex-direction: row; /* Sejajar horizontal */
+    gap: 10px; /* Jarak antar tombol */
+    width: 80%; /* Atur agar tidak terlalu melebar */
+}
+
+.btn {
+    flex: 1; /* Membuat tombol fleksibel */
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
 .inventory-table {
     width: 100%;
     table-layout: fixed;
@@ -136,10 +171,8 @@ body {
 table {
     width: 80%;
     margin: 20px auto;
-    /* background-color: #ceabab; */
     border-radius: 5px;
     overflow: hidden;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     }
     th, td {
     padding: 10px;
@@ -147,8 +180,6 @@ table {
     text-align: left;
     }
     th {
-    /* background-color: #250f13;
-    color: white; */
     text-align: center;
     font-size: 14px;
     }
