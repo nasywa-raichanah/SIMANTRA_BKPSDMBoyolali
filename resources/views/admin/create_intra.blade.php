@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user')
 
 @section('content')
 
@@ -6,7 +6,7 @@
 
     <p>Tambah Barang</p>
 
-    <form action="{{ route('aset.intra.store') }}" method="POST">
+    <form action="{{ route('admin.intra.store') }}" method="POST">
         @csrf
         
         <div class="mb-4">
@@ -60,7 +60,7 @@
         </div>
         
         <div class="button-group">
-            <a href="{{ route('aset.intra') }}" class="btn btn-cancel">Cancel</a>
+            <a href="{{ route('admin.intra') }}" class="btn btn-cancel">Cancel</a>
             <button type="submit" class="btn btn-submit">Simpan</button>
         </div>
     </form>

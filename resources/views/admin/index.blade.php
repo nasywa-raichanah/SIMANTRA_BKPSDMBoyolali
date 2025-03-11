@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -13,8 +13,8 @@
             <div class="judul">REKAPITULASI KARTU INVENTARIS BARANG (KIB) B PERALATAN DAN MESIN</div>
             <div class="button-wrapper">
                 <div class="button-index">
-                    <a href="{{ route('aset.intra') }}" class="btn">A. Intra Kompatabel</a>
-                    <a href="{{ route('aset.ekstra') }}" class="btn">B. Ekstra Kompatabel</a>
+                    <a href="{{ route('admin.intra') }}" class="btn">A. Intra Kompatabel</a>
+                    <a href="{{ route('admin.ekstra') }}" class="btn">B. Ekstra Kompatabel</a>
                 </div>
             </div> 
         </div>  

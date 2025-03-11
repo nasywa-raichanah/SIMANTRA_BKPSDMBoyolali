@@ -14,9 +14,14 @@ class AssetController extends Controller
         return view('aset.index');
     }
 
+    public function adminIndex()
+    {
+        return view('admin.index');
+    }
+
     // ======================== INTRA KOMPATABEL ========================
 
-    public function intra(Request $request)
+    public function adminIntra(Request $request)
     {
         $intra = IntraKompatabel::query();
 
@@ -26,12 +31,12 @@ class AssetController extends Controller
 
         $intra = $intra->orderBy('kode_barang')->orderBy('nomor_register')->paginate(10);
 
-        return view('aset.intra', compact('intra'));
+        return view('admin.aset_intra', compact('intra'));
     }
 
     public function createIntra()
     {
-        return view('aset.create_intra');
+        return view('admin.create_intra');
     }
 
     public function storeIntra(Request $request)
@@ -58,13 +63,13 @@ class AssetController extends Controller
             'keterangan' => $request->keterangan,
         ]);
 
-        return redirect()->route('aset.intra')->with('success', 'Aset Intra berhasil ditambahkan.');
+        return redirect()->route('admin.intra')->with('success', 'Aset Intra berhasil ditambahkan.');
     }
 
     public function editIntra($id)
     {
         $asset = IntraKompatabel::findOrFail($id);
-        return view('aset.edit_intra', compact('asset'));
+        return view('admin.edit_intra', compact('asset'));
     }
 
     public function updateIntra(Request $request, $id)
@@ -72,7 +77,7 @@ class AssetController extends Controller
         $asset = IntraKompatabel::findOrFail($id);
         $asset->update($request->all());
 
-        return redirect()->route('aset.intra')->with('success', 'Aset Intra berhasil diperbarui.');
+        return redirect()->route('admin.intra')->with('success', 'Aset Intra berhasil diperbarui.');
     }
 
     public function destroyIntra($id)
@@ -80,12 +85,12 @@ class AssetController extends Controller
         $asset = IntraKompatabel::findOrFail($id);
         $asset->delete();
 
-        return redirect()->route('aset.intra')->with('success', 'Aset Intra berhasil dihapus.');
+        return redirect()->route('admin.intra')->with('success', 'Aset Intra berhasil dihapus.');
     }
 
     // ======================== EKSTRA KOMPATABEL ========================
 
-    public function ekstra(Request $request)
+    public function adminEkstra(Request $request)
     {
         $ekstra = EkstraKompatabel::query();
 
@@ -95,12 +100,12 @@ class AssetController extends Controller
 
         $ekstra = $ekstra->orderBy('kode_barang')->orderBy('nomor_register')->paginate(10);
 
-        return view('aset.ekstra', compact('ekstra'));
+        return view('admin.aset_ekstra', compact('ekstra'));
     }
 
     public function createEkstra()
     {
-        return view('aset.create_ekstra');
+        return view('admin.create_ekstra');
     }
 
     public function storeEkstra(Request $request)
@@ -128,13 +133,13 @@ class AssetController extends Controller
             'keterangan' => $request->keterangan,
         ]);
 
-        return redirect()->route('aset.ekstra')->with('success', 'Aset Ekstra berhasil ditambahkan.');
+        return redirect()->route('admin.ekstra')->with('success', 'Aset Ekstra berhasil ditambahkan.');
     }
 
     public function editEkstra($id)
     {
         $asset = EkstraKompatabel::findOrFail($id);
-        return view('aset.edit_ekstra', compact('asset'));
+        return view('admin.edit_ekstra', compact('asset'));
     }
 
     public function updateEkstra(Request $request, $id)
@@ -142,7 +147,7 @@ class AssetController extends Controller
         $asset = EkstraKompatabel::findOrFail($id);
         $asset->update($request->all());
 
-        return redirect()->route('aset.ekstra')->with('success', 'Aset Ekstra berhasil diperbarui.');
+        return redirect()->route('admin.ekstra')->with('success', 'Aset Ekstra berhasil diperbarui.');
     }
 
     public function destroyEkstra($id)
@@ -150,6 +155,33 @@ class AssetController extends Controller
         $asset = EkstraKompatabel::findOrFail($id);
         $asset->delete();
 
-        return redirect()->route('aset.ekstra')->with('success', 'Aset Ekstra berhasil dihapus.');
+        return redirect()->route('admin.ekstra')->with('success', 'Aset Ekstra berhasil dihapus.');
     }
+
+    public function intra(Request $request)
+{
+    $intra = IntraKompatabel::query();
+
+    if ($request->filled('search')) {
+        $intra->where('nama_barang', 'like', '%' . $request->search . '%');
+    }
+
+    $intra = $intra->orderBy('created_at', 'desc')->paginate(10);
+
+    return view('aset.intra', compact('intra'));
+}
+
+public function ekstra(Request $request)
+{
+    $ekstra = EkstraKompatabel::query();
+
+    if ($request->filled('search')) {
+        $ekstra->where('nama_barang', 'like', '%' . $request->search . '%');
+    }
+
+    $ekstra = $ekstra->orderBy('created_at', 'desc')->paginate(10);
+
+    return view('aset.ekstra', compact('ekstra'));
+}
+
 }

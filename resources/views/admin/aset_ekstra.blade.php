@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.admin')
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/aset.css') }}">
@@ -9,9 +9,9 @@
             <div class="cards-container">
                 <div class="card">
                     <div class="header-section">
-                        <p class="title">Laporan Inventaris dan Aset - Intra Kompatabel</p>
+                        <p class="title">Laporan Inventaris dan Aset - Ekstra Kompatabel</p>
                         <div class="search-sort-container">
-                            <form method="GET" action="{{ route('aset.intra') }}" class="search-form">
+                            <form method="GET" action="{{ route('admin.ekstra') }}" class="search-form">
                                 <div class="search-box">
                                     <input type="text" name="search" placeholder="Cari aset..." value="{{ request('search') }}">
                                     <button type="submit">
@@ -33,10 +33,11 @@
                                 <th>Tahun Pembelian</th>
                                 <th>Harga</th>
                                 <th>Keterangan</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($intra as $item)
+                            @forelse ($ekstra as $item)
                                 <tr>
                                     <td>{{ $item->kode_barang }}</td>
                                     <td>{{ $item->nama_barang }}</td>
@@ -46,6 +47,22 @@
                                     <td>{{ $item->tahun_pembelian }}</td>
                                     <td>Rp {{ $item->harga }}</td>
                                     <td>{{ $item->keterangan }}</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="{{ route('admin.ekstra.edit', $item->id) }}" class="btn-action btn-edit">
+                                                <img src="{{ asset('image/edit.png') }}" alt="Edit" style="width: 16px; height: 16px;">
+                                            </a>
+
+                                            <form action="{{ route('admin.ekstra.destroy', $item->id) }}" method="POST" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn-action btn-delete"
+                                                    onclick="return confirm('Apakah Anda yakin ingin menghapus item ini?');">
+                                                    <img src="{{ asset('image/delete.png') }}" alt="Hapus" style="width: 16px; height: 16px;">
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
                                 </tr>
                             @empty
                                 <tr>
@@ -57,9 +74,16 @@
 
                     {{-- Pagination --}}
                     <div class="pagination-container">
-                        {{ $intra->onEachSide(1)->links('vendor.pagination.custom') }}
+                        {{ $ekstra->onEachSide(1)->links('vendor.pagination.custom') }}
                     </div>
                 </div>
+            </div>
+
+            <div class="table-actions">
+                <a href="{{ route('admin.ekstra.create') }}" class="btn-action btn-add">
+                    <img src="{{ asset('image/plus.png') }}" alt="Tambah">
+                    Tambah Data
+                </a>
             </div>
         </div>
     </div>

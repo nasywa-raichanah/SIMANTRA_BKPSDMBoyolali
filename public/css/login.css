@@ -76,6 +76,37 @@ body {
 .btn-signup:hover {
     background-color: #0c2c55;
 }
+
+.btn-signup {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 12px 35px;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    transition: 0.3s;
+    position: absolute;
+    top: 380px;
+}
+.btn-signup:hover {
+    background-color: #0c2c55;
+}
+
+.btn-admin {
+    width: 430px;
+    padding: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    transition: 0.3s;
+    bottom: 30px;
+}
+.btn-admin:hover {
+    background-color: #0c2c55;
+}
+
 .register {
     font-size: 16px;
     position: absolute;

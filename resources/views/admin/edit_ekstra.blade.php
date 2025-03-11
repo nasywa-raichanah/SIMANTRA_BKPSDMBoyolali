@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user')
 
 @section('content')
 
@@ -6,7 +6,7 @@
 
     <p>Edit Barang</p>
 
-    <form action="{{ route('aset.ekstra.update', $asset->id) }}" method="POST">
+    <form action="{{ route('admin.ekstra.update', $asset->id) }}" method="POST">
         @csrf
         @method('PUT') {{-- Gunakan method PUT untuk update data --}}
 
@@ -61,7 +61,7 @@
         </div>
 
         <div class="button-group">
-            <a href="{{ route('aset.ekstra') }}" class="btn btn-cancel">Batal</a>
+            <a href="{{ route('admin.ekstra') }}" class="btn btn-cancel">Batal</a>
             <button type="submit" class="btn btn-submit">Perbarui</button>
         </div>
     </form>

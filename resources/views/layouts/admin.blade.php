@@ -14,10 +14,10 @@
 
 <body>
 
-    @include('layouts.header')
+    @include('partials.admin-header')
 
     <div class="container">
-        @include('layouts.sidebar')
+        @include('partials.admin-sidebar')
 
         <div class="content">
             @yield('content')

@@ -54,6 +54,10 @@
 
             <div class="register">Belum punya akun?</div>
             <a href="{{ route('register') }}" class="btn-signup">SIGN UP</a>
+
+            <div class="login-admin">
+                <a href="{{ route('admin.login') }}" class="btn-admin">Login Admin</a>
+            </div>
             
         </div>
     </div>
