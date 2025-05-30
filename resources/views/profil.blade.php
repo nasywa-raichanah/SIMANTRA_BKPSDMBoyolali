@@ -33,7 +33,9 @@
 
         <!-- Foto Profil -->
         <div class="foto-profil">
-            <img id="previewImage" src="{{ asset('storage/' . $user->photo) }}" alt="Foto Profil" width="150">
+            @if($user->photo)
+                <img id="previewImage" src="{{ asset('storage/' . $user->photo) }}" alt="Foto Profil">
+            @endif
         </div>
 
         <!-- Form Upload Foto Profil -->
