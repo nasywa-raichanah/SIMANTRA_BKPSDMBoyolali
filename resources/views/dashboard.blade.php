@@ -34,19 +34,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="charts-container">
-                <div class="chart-card">
-                    <h3>Kategori Aset</h3>
-                    <canvas id="kategoriChart"></canvas>
-                </div>
-                <div class="chart-card">
-                    <h3>Lokasi Aset</h3>
-                    <canvas id="lokasiChart"></canvas>
-                </div>
-            </div>
-
-
         </div>
     </div>
 

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIMANTRA</title>
     <link rel="icon" href="{{ asset('image/logo_boyolali.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
@@ -44,20 +46,17 @@
         </div>
         <div class="right-section">
             <div class="contact-info">
-                <p>
-                    <i class="icon"></i>✉︎
-                    <i class="fas fa-envelope"></i>  bkpsdm@boyolali.go.id    
-                    <i class="icon"></i>☎
-                    <i class="fas fa-phone"></i> (0276) 321005
-                </p>
+                <div>✉︎ bkpsdm@boyolali.go.id</div>
+                <div>☎ (0276) 321005</div>
             </div>
 
-            <div class="register">Belum punya akun?</div>
-            <a href="{{ route('register') }}" class="btn-signup">SIGN UP</a>
 
-            <div class="login-admin">
-                <a href="{{ route('admin.login') }}" class="btn-admin">Login Admin</a>
+            <div class="right-content">
+                <div class="register">Belum punya akun?</div>
+                <a href="{{ route('register') }}" class="btn-signup">SIGN UP</a>
             </div>
+
+            <a href="{{ route('admin.login') }}" class="btn-admin">Login Admin</a>
             
         </div>
     </div>

@@ -1,6 +1,5 @@
-/* Styling untuk Dashboard */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lora', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #B0C4DE;
@@ -88,6 +87,7 @@ body {
 
 /* Styling untuk Cards */
 .card {
+    font-family: 'Lora', sans-serif;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -110,12 +110,14 @@ body {
 }
 
 .card h3 {
+    font-family: 'Lora', sans-serif;
     font-size: 24px;
     margin: 0;
     font-weight: bold;
 }
 
 .card p {
+    font-family: 'Lora', sans-serif;
     font-size: 16px;
     color: gray;
     margin: 5px 0;
@@ -123,6 +125,7 @@ body {
 
 /* Card Info */
 .card-info {
+    font-family: 'Lora', sans-serif;
     background-color: #102542;
     color: white;
     padding: 10px;

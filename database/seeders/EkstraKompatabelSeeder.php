@@ -196,6 +196,128 @@ class EkstraKompatabelSeeder extends Seeder
                 'keterangan' => 'Meja Panjang',
             ],
             // Tambahkan data lainnya...
+            
+            //299
+            [
+                'kode_barang' => '02.05.02.06.018',
+                'nama_barang' => 'Unit Power Supply - 19010010012002385',
+                'nomor_register' => '000111',
+                'merk_type' => 'Prolink / Pro 700 SFC',
+                'bahan' => 'Elektronik',
+                'tahun_pembelian' => 2019,
+                'harga' => 671000,
+                'keterangan' => 'UPS Prolink Pro 700 SFC (Cadangan)::BM APBD ',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.018',
+                'nama_barang' => 'Unit Power Supply - 19010010012002386',
+                'nomor_register' => '000112',
+                'merk_type' => 'Prolink / Pro 700 SFC',
+                'bahan' => 'Elektronik',
+                'tahun_pembelian' => 2019,
+                'harga' => 671000,
+                'keterangan' => 'UPS Prolink Pro 700 SFC (Cadangan)::BM APBD ',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.018',
+                'nama_barang' => 'Unit Power Supply - 19010010012002387',
+                'nomor_register' => '000113',
+                'merk_type' => 'Prolink / Pro 700 SFC',
+                'bahan' => 'Elektronik',
+                'tahun_pembelian' => 2019,
+                'harga' => 671000,
+                'keterangan' => 'UPS Prolink Pro 700 SFC (Cadangan)::BM APBD ',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.018',
+                'nama_barang' => 'Unit Power Supply - 19010010012002388',
+                'nomor_register' => '000114',
+                'merk_type' => 'Prolink / Pro 700 SFC',
+                'bahan' => 'Elektronik',
+                'tahun_pembelian' => 2019,
+                'harga' => 671000,
+                'keterangan' => 'UPS Prolink Pro 700 SFC (Cadangan)::BM APBD ',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.018',
+                'nama_barang' => 'Unit Power Supply - 19010010012002389',
+                'nomor_register' => '000115',
+                'merk_type' => 'Prolink / Pro 700 SFC',
+                'bahan' => 'Elektronik',
+                'tahun_pembelian' => 2019,
+                'harga' => 671000,
+                'keterangan' => 'UPS Prolink Pro 700 SFC (Cadangan)::BM APBD ',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.018',
+                'nama_barang' => 'Unit Power Supply - 19010010012002390',
+                'nomor_register' => '000116',
+                'merk_type' => 'Prolink / Pro 700 SFC',
+                'bahan' => 'Elektronik',
+                'tahun_pembelian' => 2019,
+                'harga' => 671000,
+                'keterangan' => 'UPS Prolink Pro 700 SFC (Cadangan)::BM APBD ',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.018',
+                'nama_barang' => 'Unit Power Supply - 19010010012002391',
+                'nomor_register' => '000117',
+                'merk_type' => 'Prolink / Pro 700 SFC',
+                'bahan' => 'Elektronik',
+                'tahun_pembelian' => 2019,
+                'harga' => 671000,
+                'keterangan' => 'UPS Prolink Pro 700 SFC (Cadangan)::BM APBD ',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.029 ',
+                'nama_barang' => 'Gambar Presiden/Wakil Presiden - 19010010012000694',
+                'nomor_register' => '000001',
+                'merk_type' => '-',
+                'bahan' => '-',
+                'tahun_pembelian' => 2000,
+                'harga' => 25000,
+                'keterangan' => 'Gambar Presiden & Wakil',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.029 ',
+                'nama_barang' => 'Gambar Presiden/Wakil Presiden - 19010010012000695',
+                'nomor_register' => '000002',
+                'merk_type' => '-',
+                'bahan' => 'Tembaga',
+                'tahun_pembelian' => 2015,
+                'harga' => 800000,
+                'keterangan' => 'Pigura Foto Presiden dan Wakil Presiden di Aula dan Loby',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.029 ',
+                'nama_barang' => 'Gambar Presiden/Wakil Presiden - 19010010012000696',
+                'nomor_register' => '000003',
+                'merk_type' => '-',
+                'bahan' => 'Tembaga',
+                'tahun_pembelian' => 2015,
+                'harga' => 800000,
+                'keterangan' => 'Pigura Foto Presiden dan Wakil Presiden di Aula dan Loby',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.029 ',
+                'nama_barang' => 'Gambar Presiden/Wakil Presiden - 19010010012000697',
+                'nomor_register' => '000004',
+                'merk_type' => '-',
+                'bahan' => 'Tembaga',
+                'tahun_pembelian' => 2015,
+                'harga' => 800000,
+                'keterangan' => 'Pigura Foto Presiden dan Wakil Presiden di Aula dan Loby',
+            ],
+            [
+                'kode_barang' => '02.05.02.06.029 ',
+                'nama_barang' => 'Gambar Presiden/Wakil Presiden - 19010010012000698',
+                'nomor_register' => '000005',
+                'merk_type' => '-',
+                'bahan' => 'Tembaga',
+                'tahun_pembelian' => 2015,
+                'harga' => 800000,
+                'keterangan' => 'Pigura Foto Presiden dan Wakil Presiden di Aula dan Loby',
+            ],
 
             // 406
             [
@@ -338,7 +460,6 @@ class EkstraKompatabelSeeder extends Seeder
                 'harga' => 220000,
                 'keterangan' => 'Box Panel::BM APBD',
             ],
-
             [
                 'kode_barang' => '02.10.02.04.033',
                 'nama_barang' => 'Peralatan Jaringan lainnya - 19010010012002435',
@@ -349,7 +470,6 @@ class EkstraKompatabelSeeder extends Seeder
                 'harga' => 220000,
                 'keterangan' => 'Box Panel :: BM APBD',
             ],
-
             [
                 'kode_barang' => '02.10.02.04.033',
                 'nama_barang' => 'Peralatan Jaringan lainnya - 19010010012002436',
@@ -360,7 +480,6 @@ class EkstraKompatabelSeeder extends Seeder
                 'harga' => 220000,
                 'keterangan' => 'Box Panel :: BM APBD',
             ],
-
             [
                 'kode_barang' => '02.10.02.04.033',
                 'nama_barang' => 'Peralatan Jaringan lainnya - 19010010012002437',
@@ -371,7 +490,6 @@ class EkstraKompatabelSeeder extends Seeder
                 'harga' => 220000,
                 'keterangan' => 'Box Panel :: BM APBD',
             ],
-
             [
                 'kode_barang' => '02.10.02.04.033',
                 'nama_barang' => 'Peralatan Jaringan lainnya - 19010010012002438',
@@ -382,7 +500,6 @@ class EkstraKompatabelSeeder extends Seeder
                 'harga' => 220000,
                 'keterangan' => 'Box Panel :: BM APBD',
             ],
-
         ];
 
         foreach ($data as $item) {

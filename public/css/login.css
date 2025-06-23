@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lora', sans-serif;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,15 +14,93 @@ body {
     height: 100%;
 }
 
+.left-section {
+    background-color: #c3d7e9;
+    flex: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
 .right-section {
     background-color: #02152E;
     color: white;
     flex: 35%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 50px;
+    position: relative;
+}
+
+.contact-info {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; /* jarak antar email & telp */
+    font-size: 14px;
+    color: white;
+    text-align: right;
+    flex-wrap: wrap; /* biar kalau sempit otomatis wrap ke bawah */
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* layar kecil jadi vertikal */
+        align-items: flex-end; /* tetap rata kanan */
+    }
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 350px;
+}
+
+.btn-signup {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 12px 35px;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.btn-signup:hover {
+    background-color: #0c2c55;
+}
+
+.register {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+.btn-admin {
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    transition: 0.3s;
+    text-decoration: underline;
+    margin-top: auto;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
 }
 
 .header {
@@ -34,13 +112,12 @@ body {
     left: 30px;
     font-size: 14px;
     color: #ffffff;
-    text-align: right;
-  }
-  
+}
+
 .logo img {
     height: 90px; 
 }
-  
+
 .nama-instansi {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -62,79 +139,11 @@ body {
     margin-left: 20px;
 }
 
-.btn-signup {
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 12px 35px;
-    font-size: 18px;
-    color: white;
-    background-color: transparent;
-    transition: 0.3s;
-    position: absolute;
-    top: 380px;
-}
-.btn-signup:hover {
-    background-color: #0c2c55;
-}
-
-.btn-signup {
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 12px 35px;
-    font-size: 18px;
-    color: white;
-    background-color: transparent;
-    transition: 0.3s;
-    position: absolute;
-    top: 380px;
-}
-.btn-signup:hover {
-    background-color: #0c2c55;
-}
-
-.btn-admin {
-    width: 430px;
-    padding: 14px;
-    font-size: 17px;
-    font-weight: bold;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    transition: 0.3s;
-    bottom: 30px;
-}
-.btn-admin:hover {
-    background-color: #0c2c55;
-}
-
-.register {
-    font-size: 16px;
-    position: absolute;
-    top: 350px;
-}
-
-.left-section {
-    background-color: #c3d7e9;
-    flex: 65%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
-.contact-info {
-    position: absolute;
-    top: 15px;
-    right: 30px;
-    font-size: 14px;
-    color: #ffffff;
-    text-align: right;
-}
-
 .input-group {
     position: relative;
     margin-bottom: 20px;
 }
+
 .input-group input {
     width: 400px;
     padding: 14px;
@@ -142,7 +151,9 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #e5e7eb;
+    font-family: 'Lora', sans-serif;
 }
+
 .input-group i {
     position: absolute;
     right: 15px;
@@ -150,6 +161,7 @@ body {
     transform: translateY(-50%);
     color: #333;
 }
+
 .btn-signin {
     width: 430px;
     padding: 14px;
@@ -161,6 +173,7 @@ body {
     color: white;
     transition: 0.3s;
 }
+
 .btn-signin:hover {
     background-color: #0c2c55;
 }
@@ -179,4 +192,40 @@ body {
     color: #000;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.btn-signup {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 12px 35px;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.btn-signup:hover {
+    background-color: #0c2c55;
+}
+
+.register {
+    font-size: 16px;
+    color: white;
+}
+
+.btn-admin {
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    transition: 0.3s;
+    margin-top: auto;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.btn-admin:hover {
+    color: #0c2c55;
 }

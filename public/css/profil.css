@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lora', sans-serif;
     margin: 0;
 }
 
@@ -46,6 +46,7 @@ body {
 }
 
 .ubah-foto-btn {
+    font-family: 'Poppins', sans-serif;
     margin-top: 20px;
     width: 90px;
     padding: 3px;
@@ -88,6 +89,7 @@ body {
 }
 
 .edit-password-btn {
+    font-family: 'Poppins', sans-serif;
     padding: 10px 20px;
     font-size: 14px;
     font-weight: bold;
