@@ -7,26 +7,27 @@
     <title>SIMANTRA - Profil Akun</title>
     <link rel="icon" href="{{ asset('image/logo_boyolali.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
 </head>
 
 <body>
 
     <div class="form">
-            @if(session('success'))
-                <div id="success-alert" class="alert success">
-                    {{ session('success') }}
-                </div>
-            @endif
+        @if(session('success'))
+            <div id="success-alert" class="alert success">
+                {{ session('success') }}
+            </div>
+        @endif
 
-            @if($errors->any())
-                <div id="error-alert" class="alert error">
-                    @foreach($errors->all() as $error)
-                        <div>{{ $error }}</div>
-                    @endforeach
-                </div>
-            @endif
+        @if($errors->any())
+            <div id="error-alert" class="alert error">
+                @foreach($errors->all() as $error)
+                    <div>{{ $error }}</div>
+                @endforeach
+            </div>
+        @endif
 
 
         <a href="javascript:history.back()" class="back-btn">Kembali</a>
@@ -35,9 +36,10 @@
 
         <!-- Foto Profil -->
         <div class="foto-profil">
-            @if($user->photo)
-                <img id="previewImage" src="{{ asset('storage/' . $user->photo) }}" alt="Foto Profil">
-            @endif
+            <img id="previewImage"
+                src="{{ $user->photo ? asset('storage/' . $user->photo) : asset('image/default.png') }}"
+                alt="Foto Profil"
+                style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 2px solid #ccc;">
         </div>
 
         <!-- Form Upload Foto Profil -->
@@ -54,7 +56,7 @@
             </button>
 
             <!-- Tombol Submit -->
-            <button type="submit" class="ubah-foto-btn">Upload</button>
+            <button type="submit" class="ubah-foto-btn" onclick="return checkFileSelected()">Upload</button>
         </form>
 
         <div class="nama-nip">
@@ -68,98 +70,111 @@
             </div>
         </div>
 
-    <!-- JavaScript untuk Preview Gambar -->
-    <script>
-        function previewImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    document.getElementById('previewImage').src = e.target.result;
-                };
-                reader.readAsDataURL(file);
+        <!-- JavaScript untuk Preview Gambar -->
+        <script>
+            function previewImage(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById('previewImage').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
             }
-        }
-    </script>
+
+            function checkFileSelected() {
+                const fileInput = document.getElementById('photoInput');
+                if (!fileInput.value) {
+                    alert('Silakan pilih foto terlebih dahulu!');
+                    return false;
+                }
+                return true;
+            }
+
+        </script>
 
 </body>
 
 </html>
 
 
-    <!-- Tombol Edit Password -->
-    <div class="button-container">
-        <button onclick="openModal()" class="edit-password-btn">Edit Password</button>
+<!-- Tombol Edit Password -->
+<div class="button-container">
+    <button onclick="openModal()" class="edit-password-btn">Edit Password</button>
+</div>
+
+<!-- Modal Pop-up -->
+<div id="passwordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Ubah Password</h2>
+
+        <form action="{{ route('profile.updatePassword') }}" method="POST" onsubmit="return validatePassword()">
+            @csrf
+            <div class="mb-4">
+                <label class="label">Password lama</label>
+                <input class="input-field" type="password" id="current_password" name="current_password"
+                    placeholder="Masukkan password lama" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="label">Password baru</label>
+                <input class="input-field" type="password" id="new_password" name="new_password"
+                    placeholder="Masukkan password baru" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="label">Konfirmasi Password baru</label>
+                <input class="input-field" type="password" id="new_password_confirmation"
+                    name="new_password_confirmation" placeholder="Masukkan konfirmasi password baru" required>
+            </div>
+
+            <button type="submit" class="save-btn">Simpan</button>
+        </form>
     </div>
+</div>
 
-    <!-- Modal Pop-up -->
-    <div id="passwordModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Ubah Password</h2>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const alertBox = document.getElementById('success-alert');
+        if (alertBox) {
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 5000); // Menghilangkan notifikasi setelah 3 detik
+        }
+        const errorAlert = document.getElementById('error-alert');
+        if (errorAlert) {
+            setTimeout(() => {
+                errorAlert.style.display = 'none';
+            }, 5000); // Menghilangkan setelah 5 detik
+        }
+    });
 
-            <form action="{{ route('profile.updatePassword') }}" method="POST" onsubmit="return validatePassword()">
-                @csrf
-                <div class="mb-4">
-                    <label class="label">Password lama</label>
-                    <input class="input-field" type="password" id="current_password" name="current_password" placeholder="Masukkan password lama" required>
-                </div>
 
-                <div class="mb-4">
-                    <label class="label">Password baru</label>
-                    <input class="input-field" type="password" id="new_password" name="new_password" placeholder="Masukkan password baru" required>
-                </div>
 
-                <div class="mb-4">
-                    <label class="label">Konfirmasi Password baru</label>
-                    <input class="input-field" type="password" id="new_password_confirmation" name="new_password_confirmation" placeholder="Masukkan konfirmasi password baru" required>
-                </div>  
+    function openModal() {
+        document.getElementById('passwordModal').style.display = 'block';
+    }
 
-                <button type="submit" class="save-btn">Simpan</button>
-            </form>
-        </div>
-    </div>
+    function closeModal() {
+        document.getElementById('passwordModal').style.display = 'none';
+    }
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const alertBox = document.getElementById('success-alert');
-            if (alertBox) {
-                setTimeout(() => {
-                    alertBox.style.display = 'none';
-                }, 5000); // Menghilangkan notifikasi setelah 3 detik
-            }
-            const errorAlert = document.getElementById('error-alert');
-            if (errorAlert) {
-                setTimeout(() => {
-                    errorAlert.style.display = 'none';
-                }, 5000); // Menghilangkan setelah 5 detik
-            }
-        });
+    function validatePassword() {
+        const newPassword = document.getElementById('new_password').value;
+        const confirmPassword = document.getElementById('new_password_confirmation').value;
 
-        
-
-        function openModal() {
-            document.getElementById('passwordModal').style.display = 'block';
+        if (newPassword.length < 6) {
+            alert("Password baru harus minimal 6 karakter!");
+            return false;
         }
 
-        function closeModal() {
-            document.getElementById('passwordModal').style.display = 'none';
+        if (newPassword !== confirmPassword) {
+            alert("Konfirmasi password tidak cocok!");
+            return false;
         }
 
-        function validatePassword() {
-            const newPassword = document.getElementById('new_password').value;
-            const confirmPassword = document.getElementById('new_password_confirmation').value;
-
-            if (newPassword.length < 6) {
-                alert("Password baru harus minimal 6 karakter!");
-                return false;
-            }
-
-            if (newPassword !== confirmPassword) {
-                alert("Konfirmasi password tidak cocok!");
-                return false;
-            }
-
-            return true;
-        }
-    </script>
+        return true;
+    }
+</script>
