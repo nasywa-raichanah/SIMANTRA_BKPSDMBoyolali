@@ -95,6 +95,10 @@ body {
     margin-bottom: 20px;
 }
 
+.title {
+    font-family: 'Poppins', sans-serif;
+}
+
 .button-wrapper {
     display: flex;
     justify-content: center; /* Agar konten di tengah */
@@ -181,6 +185,7 @@ table {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
+    font-family: 'Lora', sans-serif;
     }
     th {
     text-align: center;
@@ -218,6 +223,7 @@ table {
 }
     
 .btn-add {
+    font-family: 'Poppins', sans-serif;
     display: flex; /* Membuat ikon dan teks dalam satu baris */
     align-items: center; /* Sejajarkan ikon dan teks di tengah vertikal */
     justify-content: center; /* Memastikan konten berada di tengah */
@@ -264,6 +270,7 @@ table {
 }
 
 .search-box input {
+    font-family: 'Lora', sans-serif;
     border: none;
     padding: 5px;
     flex: 1;
@@ -305,6 +312,7 @@ table {
 }
 
 .pagination {
+    font-family: 'Lora', sans-serif;
     display: flex;
     justify-content: center;
     list-style: none;

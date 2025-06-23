@@ -1,6 +1,8 @@
 @extends('layouts.user')
 
 @section('content')
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/aset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
 

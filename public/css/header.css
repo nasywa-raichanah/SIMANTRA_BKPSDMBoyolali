@@ -15,6 +15,7 @@
 }
 
 .header .header-text {
+    font-family: 'Lora', sans-serif;
     font-size: 18px;
     font-weight: bold;
     white-space: nowrap; /* Agar teks tidak terpotong */

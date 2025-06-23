@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Lora', sans-serif;
 }
 
 .container {
@@ -19,6 +19,7 @@
 }
 
 .sidebar h2 {
+    font-family: 'Poppins', sans-serif;
     font-size: 26px;
 }
 
@@ -49,6 +50,7 @@
 
 /* Styling item menu agar sejajar */
 .menu li {
+    font-family: 'Lora', sans-serif;
     padding: 15px;
 }
 
